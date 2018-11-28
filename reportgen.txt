@@ -1,0 +1,84 @@
+---
+title: "Frequency of letters at the start position in each word in the words dataset"
+author: "Seevasant Indran"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r load_freq_dat, include = FALSE}
+freq_dat <- read.delim("freq_let.tsv")
+```
+
+I computed the letter usage at the begining of each word in the list, i.e. Frequency of each letter at the start position of each word in the word list, etc.
+
+The most frequent letter at the begining is `r LETTERS[which(freq_dat$start_letter ==  max(freq_dat$start_letter))]`.
+
+### Here is a histogram of the frequency of the word list that begins with all the available letters.
+![*Fig. 1* A histogram of letter usage in the begining of the each word](freq_let.png)  
+  
+```{r load_his_dat, include = F}
+hist_dat <- read.delim("histogram.tsv")
+```
+  
+**Jenny Bryan** 
+  
+\newline  
+  
+On most *nix systems, the file `/usr/share/dict/words` contains a bunch of words. A total `r sum(hist_dat$Freq)` words is contained on my machine.
+
+I computed the length of each word, i.e. the number of characters, and tabulated how many words consist of 1 character, 2 characters, etc.
+
+The most frequent word length is `r with(hist_dat, Length[which.max(Freq)])`.
+
+Here is a histogram of word lengths.
+
+![*Fig. 1* A histogram of English word lengths](histogram.png)
+
+
+---
+title: "English Word lengths"
+author: "Jenny Bryan"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r load-hist-dat, include = FALSE}
+hist_dat <- read.delim("histogram.tsv")
+```
+
+On most *nix systems, the file `/usr/share/dict/words` contains a bunch of words. On my machine, it contains `r sum(hist_dat$Freq)` words.
+
+I computed the length of each word, i.e. the number of characters, and tabulated how many words consist of 1 character, 2 characters, etc.
+
+The most frequent word length is `r with(hist_dat, Length[which.max(Freq)])`.
+
+Here is a histogram of word lengths.
+
+![*Fig. 1* A histogram of English word lengths](histogram.png)
+
+---
+title: "Frequency of letters at the start position in each words in the words dataset"
+author: "Seevasant Indran"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    keep_md: yes
+---
+
+```{r load-freq-dat, include = FALSE}
+freq_dat <- read.delim("freq_let.tsv")
+```
+
+#### Seevasant Indran
+
+I computed the letter usage at the begining of the word list, i.e. Frequency each letters at the start of a word in the word list, etc.
+
+The most frequent letter at the begining is `r LETTERS[which(freq_dat$start_letter ==  max(freq_dat$start_letter))]`.
+
+### Here is a histogram of the frequency of the word list that begins with all the available letters.
+
+![*Fig. 1* A histogram of letter usage in the begining of the each word](freq_let.png)
